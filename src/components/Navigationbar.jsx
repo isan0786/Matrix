@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import Search from './Search'
+import Search from './Search';
+import Home from './Home';
 export default class Navigationbar extends Component {
 
 
@@ -21,19 +22,19 @@ export default class Navigationbar extends Component {
         <Navbar.Collapse className="justify-content-center" >
           <Nav >
             <Nav.Item>
-              <Nav.Link href="/home" >Active</Nav.Link>
+              <Nav.Link href="/" >Active</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-1">Link</Nav.Link>
+              <Nav.Link href="./NarratingBook">Narrate-Book</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-2">Link</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">Link</Nav.Link>
+              <Nav.Link eventKey="/MediaPlayery">MediaPlayer</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="link-2">Link</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="link-2">About App</Nav.Link>
             </Nav.Item>
 
           </Nav>
