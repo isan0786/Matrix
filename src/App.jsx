@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
 import NarratingPage from './components/NarratingPage';
 import AudioPlayerPage from './components/AudioPlayerPage';
+import BookView from './components/BookView'
 
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
     <Router>
       <div>
       
-        <Route exact path="/" component={AudioPlayerPage} />
+        <Route exact path="/" component={BookView} />
         
         </div>
       </Router>
