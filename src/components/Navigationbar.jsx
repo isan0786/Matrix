@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
 import Avatar from "./Avatar";
+import Search from './Search';
+import Home from './Home';
+
 export default class Navigationbar extends Component {
 
 
@@ -25,15 +28,16 @@ export default class Navigationbar extends Component {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/login">Login</Nav.Link>
+
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="/MediaPlayery">MediaPlayer</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="link-2">Link</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-2">Link</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">Link</Nav.Link>
+              <Nav.Link eventKey="link-2">About App</Nav.Link>
             </Nav.Item>
 
 
