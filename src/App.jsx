@@ -14,14 +14,10 @@ class App extends Component {
     return(
     <Router>
       <div>
-<<<<<<< HEAD
       
-        <Route exact path="/" component={AudioPlayerPage} />
-=======
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         {/* <Route exact path="/mediaplayer" component={} /> */}
->>>>>>> master
         
         </div>
       </Router>
