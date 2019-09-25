@@ -12,7 +12,7 @@ class App extends Component {
     <Router>
       <div>
       
-        <Route exact path="/" component={BookView} />
+        <Route exact path="/" component={AudioPlayerPage} />
         
         </div>
       </Router>
