@@ -1,3 +1,3 @@
 # Matrix
 
-This is our capstone frontend
+A free Audio Book Web App
