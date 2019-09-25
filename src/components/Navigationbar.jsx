@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import Search from './Search';
+import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
+import Avatar from "./Avatar";
+
 import Home from './Home';
+
 export default class Navigationbar extends Component {
 
 
@@ -19,13 +21,14 @@ export default class Navigationbar extends Component {
           alt="React Bootstrap logo"
         /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className="justify-content-center" >
+        <Navbar.Collapse className="justify-content-center"  >
           <Nav >
             <Nav.Item>
-              <Nav.Link href="/" >Active</Nav.Link>
+              <Nav.Link href="/" >Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="./NarratingBook">Narrate-Book</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="/MediaPlayery">MediaPlayer</Nav.Link>
@@ -37,10 +40,21 @@ export default class Navigationbar extends Component {
               <Nav.Link eventKey="link-2">About App</Nav.Link>
             </Nav.Item>
 
+
+
+
+
           </Nav>
-          <Search />
+
+          <Navbar.Brand className="mr-2" > <Avatar /></Navbar.Brand>
+          <NavDropdown title="Name" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.4">SignOut</NavDropdown.Item>
+          </NavDropdown>
         </Navbar.Collapse>
+
       </Navbar>
+
     )
+
   }
 }

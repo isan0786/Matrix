@@ -3,6 +3,8 @@ import Navigationbar from './Navigationbar';
 import Audiobg from './Audiobg';
 import Slideshow from './Slideshow';
 import Feature from './Feature';
+//import SSO from './SSOAuth'
+import Login from './Login';
 import Footer from './Footer';
 export default class Home extends Component {
 
@@ -15,8 +17,9 @@ export default class Home extends Component {
                     <Feature/>
                     
                     <Slideshow/>
-                
-                    <Footer/>
+                 
+                    <Footer/> 
+                  
                     
             </div>
             
