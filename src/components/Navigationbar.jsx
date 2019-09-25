@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
 import Avatar from "./Avatar";
-import Search from './Search';
+
 import Home from './Home';
 
 export default class Navigationbar extends Component {
