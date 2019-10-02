@@ -48,7 +48,7 @@ export default class Navigationbar extends Component {
 
           <Navbar.Brand className="mr-2" > <Avatar /></Navbar.Brand>
           <NavDropdown title="Name" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.4">SignOut</NavDropdown.Item>
+            <NavDropdown.Item href="/login" onClick={this.props.signout}>SignOut</NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>
 

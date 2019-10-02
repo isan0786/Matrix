@@ -4,25 +4,31 @@ import React, { Component } from "react"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "------------------------------------",
-    authDomain: "------------------------------------",
-    databaseURL: "------------------------------------",
-    projectId: "------------------------------------",
-    storageBucket: "------------------------------------",
-    messagingSenderId: "------------------------------------",
-    appId: "------------------------------------"
-  };
-  // Initialize Firebase
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+  apiKey: "AIzaSyBCSZPLze1QkrWJZ3pX5EOVue2MFOwNaKI",
+  authDomain: "matrix-31194.firebaseapp.com",
+  databaseURL: "https://matrix-31194.firebaseio.com",
+  projectId: "matrix-31194",
+  storageBucket: "matrix-31194.appspot.com",
+  messagingSenderId: "713246455922",
+  appId: "1:713246455922:web:87ea10ac20f833d692aaeb"
+};
+// Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
 
   export default class SSOAuth extends Component {
 
-    capturedata=()=>{
+    // capturedata=()=>{
      
-      this.props.setAuthData(firebase.auth().currentUser.displayName,firebase.auth().currentUser.email,firebase.auth().currentUser.photoURL);
-    }
+    //   this.props.setAuthData(firebase.auth().currentUser.displayName,firebase.auth().currentUser.email,firebase.auth().currentUser.photoURL);
+    // }
+
+    // constructor(props){
+    //   super(props);
+    //   this.setAuthData = this.setAuthData.bind(this);
+    // }
 
   state = { isSignedIn: false }
   uiConfig = {
@@ -49,11 +55,22 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
   }
 
+  signout(){
+    //console.log('chut');
+    
+    firebase.auth().signOut();
+   
+  }
+
+  // setAuthData(){
+  //   this.props.authData(firebase.auth().currentUser.displayName);
+  // }
+
   // componentDidUpdate=()=>{
   //   console.log('update');
-  //   if(this.state.isSignedIn === true && this.props.userName != firebase.auth().currentUser.displayName){
+  //   if(this.state.isSignedIn === true){
   //     console.log('signed');
-  //     this.capturedata();
+  //     this.props.authData(firebase.auth().currentUser.displayName);
   //  }
   // }
 
@@ -63,13 +80,14 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>
-            <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
+            <button onClick={this.signout}>Sign out!</button>
             <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
             <h1>Email {firebase.auth().currentUser.email}</h1>
             <img
               alt="profile picture"
               src={firebase.auth().currentUser.photoURL}
             />
+          
           </span>
         ) : (
           <StyledFirebaseAuth

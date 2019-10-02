@@ -5,10 +5,32 @@ import SSO from './SSOAuth'
 export default class Login extends Component {
 
  
+  constructor(props){
+    super(props);
+    this.state={
+      collapsed: false,
+      username:"test",
+      email:"",
+      photoUrl:"",
 
-  state = {
-    collapsed: false,
-  };
+    }
+
+    this.setAuthData = this.setAuthData.bind(this);
+
+  }
+
+
+  setAuthData(name){
+    this.setState({username:name})
+    
+    console.log("login component"+this.state.username);
+  }
+
+
+
+
+
+ 
 
   // setLoginStateData=(nameFromSSO,emailFromSSO,photoFromSSO)=>{
   //   console.log("name from child is: "+nameFromSSO);
@@ -23,8 +45,12 @@ export default class Login extends Component {
     });
   };
 
+  signoutChildCall=()=>{
+    console.log('login');
+    this.refs.child.signout();
+  }
 
-
+  
   render() {
     const navStyle = { marginTop: "4rem" };
     const overlay = (
@@ -36,9 +62,10 @@ export default class Login extends Component {
     );
     return (
       <>
+
        
         <MDBView src={`https://www.xmple.com/wallpaper/gradient-white-orange-linear-1920x1080-c2-ffffff-ff8c00-a-285-f-14.svg`} >
-        <Navigationbar/>
+        <Navigationbar signout={this.signoutChildCall}/>
         <MDBMask className="rgba-purple-slight d-flex justify-content-center align-items-center">
             <MDBContainer>
               <MDBRow>
@@ -49,7 +76,7 @@ export default class Login extends Component {
               </MDBRow>
             </MDBContainer>
           </MDBMask>
-        <SSO />
+        <SSO ref='child'  authData={this.setAuthData.bind(this)}/>
         </MDBView>
       </>
     );
