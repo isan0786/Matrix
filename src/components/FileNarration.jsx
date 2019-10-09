@@ -71,7 +71,7 @@ export default class FileNarration extends Component {
       musicFile:this.state.mFile,
     }
 
-    axios.post('http://capstone.parteek.in8082/uploadNarration',payload)
+    axios.post('http://capstone.parteek.in:8082/uploadNarration',payload)
     .then(res=>{
       console.log('file added at the backend');
     })
