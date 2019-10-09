@@ -58,6 +58,10 @@ export default class BookView extends Component {
                                                 <Button variant="secondary" size="lg" block>
                                                     Chapter 2
                                                 </Button>
+                                                <Button variant="outline-success" size="lg" block>
+                                                Narrate
+                                                </Button>
+                                                
                                             </div>
                                         </ListGroup>
                                         </Accordion.Collapse>
