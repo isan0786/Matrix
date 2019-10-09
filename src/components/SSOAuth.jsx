@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 //import "./App.css"
-
+import {useSelector,connect} from 'react-redux';
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
@@ -18,7 +18,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
   firebase.initializeApp(firebaseConfig);
 
-  export default class SSOAuth extends Component {
+   class SSOAuth extends Component {
 
     // capturedata=()=>{
      
@@ -98,6 +98,21 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
       </div>
     )
   }
+
+
+
+
 }
 
-//  export default App
+// const mapStateToProps = state => ({ counter: state.counter })
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         increment: (counter) =>{dispatch({type:'INC', count:counter})},
+//         decrement: (counter) =>{dispatch({type:'DEC', count:counter})}
+//     }
+//   }
+
+
+export default (SSOAuth);
+

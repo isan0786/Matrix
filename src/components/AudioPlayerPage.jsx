@@ -29,11 +29,10 @@ export default class AudioPlayerPage extends Component {
                 <Navigationbar />
                   <AudioPlayer
                    autoPlay
-                  src="https://ia800903.us.archive.org/21/items/dictabelt_cassette_a/jfk_dict_03a8.wav"
+                  src="https://idrive.ishananand.ca/remote.php/webdav/samplemp3.mp3"
                     onPlay={e => console.log("onPlay")} />
 
-<div className="page-wrap bg-white">
-        <div>
+<div class="container text-center">
           <StarRatings
             rating={this.state.rating}
             starRatedColor="orange"
@@ -44,7 +43,7 @@ export default class AudioPlayerPage extends Component {
           />
         </div>
         
-      </div>           
+               
                 <Footer/>
                     
                     
