@@ -3,11 +3,8 @@ import Navigationbar from './Navigationbar';
 import Footer from './Footer';
 import AudioPlayer from 'react-h5-audio-player';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import StarRatings from 'react-star-ratings';
 import { Card, CardDeck, Badge } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 export default class AudioPlayerPage extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +29,7 @@ export default class AudioPlayerPage extends Component {
 
                   <AudioPlayer
                    autoPlay
-                  src="https://idrive.ishananand.ca/remote.php/webdav/samplemp3.mp3"
+                  src="https://audiobooks.ishananand.ca/Alice%20Adventure%20In%20Wonderland/wonderland_ch_01_64kb.mp3"
                     onPlay={e => console.log("onPlay")} />
 <br/>
 <br/>
@@ -51,8 +48,7 @@ export default class AudioPlayerPage extends Component {
     <Card.Body>
       <Card.Title>Ishan</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+      For me, audio books are a convenient way to get to the books I've been interested in. I can listen to an audio book while doing other things.
       </Card.Text>
     </Card.Body>
     <Card.Footer class="container text-center">
@@ -64,12 +60,11 @@ export default class AudioPlayerPage extends Component {
     <Card.Body>
       <Card.Title>Parteek</Card.Title>
       <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+      The service itself was actually great.{' '}
       </Card.Text>
     </Card.Body>
     <Card.Footer class="container text-center">
-    <Rating value={3} readOnly />
+    <Rating value={4} readOnly />
     </Card.Footer>
   </Card>
   <Card>
@@ -77,13 +72,11 @@ export default class AudioPlayerPage extends Component {
     <Card.Body>
       <Card.Title>Avreen</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      I like to use my time productively. Listening to nonsense on the radio is just not an option.
       </Card.Text>
     </Card.Body>
     <Card.Footer class="container text-center">
-    <Rating value={3} readOnly />
+    <Rating value={5} readOnly />
     </Card.Footer>
   </Card>
 </CardDeck>
