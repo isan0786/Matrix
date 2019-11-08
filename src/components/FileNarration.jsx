@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Navigationbar from './Navigationbar';
 import Footer from './Footer';
-import { Card, Button, Accordion, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, Button, Accordion, ListGroup, ListGroupItem, Alert, Toast } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AlertDialogue  from './AlertDialogue';
+
+
 
 import MicRecorder from 'mic-recorder-to-mp3';
 import axios from 'axios';
-
 
 export default class FileNarration extends Component {
 
@@ -24,6 +26,10 @@ export default class FileNarration extends Component {
     this.postData = this.postData.bind(this);
     this.stopRecording = this.stopRecording.bind(this);
     this.startRecording = this.startRecording.bind(this);
+
+    this.openAlertDialogue = this.openAlertDialogue.bind(this);
+    
+    this.hideAlertDialogue = this.hideAlertDialogue.bind(this);
   }
 
   changeRating(rating, name) {
@@ -33,6 +39,17 @@ export default class FileNarration extends Component {
     })
   }
 
+  openAlertDialogue() {
+    this.setState({ alert: true });
+    
+
+  }
+  hideAlertDialogue() {
+    this.setState({ alert: false });
+    
+
+  }
+ 
 
   stopRecording() {
    this.state.recorder.stop().getMp3().then(([buffer, blob]) => {
@@ -65,6 +82,10 @@ export default class FileNarration extends Component {
     
   }
 
+  
+
+
+
   postData(){
 
     const payload = {
@@ -77,8 +98,11 @@ export default class FileNarration extends Component {
     })
     .catch(e=>e)
 
+    
 
   }
+
+
 
 
   render(){
@@ -196,7 +220,7 @@ finished off the cake. </Card.Text>
     <br />
     <ul id="playlist"></ul>
 
-    <Button  variant="warning" onClick={this.postData}>Send</Button>
+    <Button variant="warning" onClick={this.openAlertDialogue} >Send</Button>
     <br />
     <br />
   </div>
@@ -212,6 +236,7 @@ finished off the cake. </Card.Text>
           />
         </div> */}
         <Footer/>
+        <AlertDialogue message="Sent Successful" messageSec="Thank you so much for the time and effort that you put in this application. We have received your file and it's ready for the validating process." show={this.state.alert} onHide={this.hideAlertDialogue} />
       </React.Fragment>
     );
   }

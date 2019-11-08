@@ -27,7 +27,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book1
+                                    And Fire Came Down
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -79,7 +79,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book2
+                                    AngelBound
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -179,7 +179,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book3
+                                    Alice Adventure In Wonderland
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -269,7 +269,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book4
+                                    Bertrand Russell and A. N. Whitehead
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -321,7 +321,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book5
+                                    Bittersweet
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -374,7 +374,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book6
+                                    Dying for a Paycheck
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -426,7 +426,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book7
+                                    Essential Bukowski Poetry
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -505,7 +505,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book8
+                                    False Face
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -557,7 +557,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book9
+                                    Bioethics and the Human Goods
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
@@ -609,7 +609,7 @@ export default class BookView extends Component {
                             <Card  >
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Book10
+                                    Global News
                                     </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
