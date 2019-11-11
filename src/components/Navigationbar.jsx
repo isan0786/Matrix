@@ -35,17 +35,13 @@ export default class Navigationbar extends Component {
               <Nav.Link href="/BookView">Library</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="link-2">About App</Nav.Link>
+              <Nav.Link href="/Narration">Narration</Nav.Link>
             </Nav.Item>
-
-
-
-
-
+            
           </Nav>
 
           <Navbar.Brand className="mr-2" > <Avatar /></Navbar.Brand>
-          <NavDropdown title="Name" id="basic-nav-dropdown">
+          <NavDropdown title="User" id="basic-nav-dropdown">
             <NavDropdown.Item href="/login" onClick={this.props.signout}>SignOut</NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>

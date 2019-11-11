@@ -30,14 +30,6 @@ export default class Login extends Component {
 
 
 
- 
-
-  // setLoginStateData=(nameFromSSO,emailFromSSO,photoFromSSO)=>{
-  //   console.log("name from child is: "+nameFromSSO);
-  //   this.setState({name:nameFromSSO});
-
-  //   console.log("name is: "+this.state.name);
-  // }
 
   handleTogglerClick = () => {
     this.setState({
@@ -64,7 +56,7 @@ export default class Login extends Component {
       <>
 
        
-        <MDBView src={`https://www.xmple.com/wallpaper/gradient-white-orange-linear-1920x1080-c2-ffffff-ff8c00-a-285-f-14.svg`} >
+        <MDBView src={require('./assets/login-bg.png')} >
         <Navigationbar signout={this.signoutChildCall}/>
         <MDBMask className="rgba-purple-slight d-flex justify-content-center align-items-center">
             <MDBContainer>
