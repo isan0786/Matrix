@@ -6,13 +6,13 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import {  MDBRow,  MDBCard, MDBCardBody,  MDBIcon, MDBCol, MDBCardImage, MDBCardText, MDBCardTitle } from "mdbreact";
  // Your web app's Firebase configuration
  var firebaseConfig = {
-  apiKey: "AIzaSyBCSZPLze1QkrWJZ3pX5EOVue2MFOwNaKI",
-  authDomain: "matrix-31194.firebaseapp.com",
-  databaseURL: "https://matrix-31194.firebaseio.com",
-  projectId: "matrix-31194",
-  storageBucket: "matrix-31194.appspot.com",
-  messagingSenderId: "713246455922",
-  appId: "1:713246455922:web:87ea10ac20f833d692aaeb"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 // Initialize Firebase
 
