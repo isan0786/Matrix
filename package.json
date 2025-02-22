@@ -18,7 +18,7 @@
     "react-alert": "^6.0.0",
     "react-awesome-slider": "^1.0.1",
     "react-bootstrap": "^1.0.0-beta.12",
-    "react-bootstrap-star-rating": "^3.5.5-alpha.0.3",
+    "react-bootstrap-star-rating": "https://github.com/kartik-v/bootstrap-star-rating.git#v3.5.5",
     "react-collapsible": "^2.6.0",
     "react-dom": "^16.9.0",
     "react-firebaseui": "^4.0.0",
