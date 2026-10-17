@@ -1,0 +1,28 @@
+version: "prometheus/v1"
+service: "matrix"
+labels:
+  owner: "team-matrix"
+  repo: "isan0786/Matrix"
+  tier: "2"
+slos:
+  - name: "requests-availability"
+    objective: 99.5
+    description: "Matrix HTTP service availability probe."
+    labels:
+      category: availability
+    sli:
+      events:
+        error_query: sum(sum_over_time((1 - probe_success{repo="isan0786/Matrix"})[{{.window}}:30s]))
+        total_query: sum(count_over_time(probe_success{repo="isan0786/Matrix"}[{{.window}}]))
+    alerting:
+      name: "MatrixServiceUnavailable"
+      labels:
+        category: "availability"
+      annotations:
+        summary: "Matrix endpoint availability dropped below target"
+      page_alert:
+        labels:
+          severity: "page"
+      ticket_alert:
+        labels:
+          severity: "ticket"

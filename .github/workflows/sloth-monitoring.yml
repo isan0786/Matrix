@@ -1,0 +1,50 @@
+name: Sloth SLO monitoring
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.sloth/**'
+      - '.github/workflows/sloth-monitoring.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sloth-reconcile-${{ github.repository }}
+  cancel-in-progress: false
+jobs:
+  sloth-monitoring:
+    runs-on: [self-hosted, linux, x64, sloth-private]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate and reconcile in K3s
+        shell: bash
+        env:
+          SLOTH_GATEWAY_URL: ${{ vars.SLOTH_GATEWAY_URL }}
+          SLOTH_CI_TOKEN: ${{ secrets.SLOTH_CI_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$SLOTH_GATEWAY_URL" && test -n "$SLOTH_CI_TOKEN"
+          http_code="$(curl -sS --max-time 300 -o sloth-result.json -w '%{http_code}' \
+            -H "Authorization: Bearer ${SLOTH_CI_TOKEN}" \
+            -H "Idempotency-Key: ${GITHUB_REPOSITORY}@${GITHUB_SHA}" \
+            -F "repository=${GITHUB_REPOSITORY}" \
+            -F "commit_sha=${GITHUB_SHA}" \
+            -F "sloth=@.sloth/sloth.yaml;type=application/yaml" \
+            -F "target=@.sloth/target.yaml;type=application/yaml" \
+            "${SLOTH_GATEWAY_URL}/api/v1/ci/reconcile?wait=true")"
+          cat sloth-result.json
+          test "$http_code" = 200
+          jq -e '.status == "READY_UPTIME_SLO" or .status == "READY_LIVE_REQUEST_SLO"' sloth-result.json
+          {
+            echo '## K3s Sloth monitoring result'
+            echo '```json'
+            cat sloth-result.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish machine-readable result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sloth-monitoring-result
+          path: sloth-result.json
+          if-no-files-found: warn

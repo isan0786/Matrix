@@ -1,0 +1,7 @@
+schema_version: 1
+project_id: isan0786/Matrix
+mode: uptime
+probe:
+  url: http://project-apps.project-apps.svc.cluster.local:8080/matrix/
+  interval: 30s
+  timeout: 5s
